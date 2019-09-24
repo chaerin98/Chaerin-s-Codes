@@ -2,16 +2,18 @@ var size = 5;
 function setup(){
  createCanvas(1200, 900);
  background(0);
+ frameRate(60);
 }
 function draw(){
    if (mouseIsPressed){
-     if (keyIsPressed){
-       frameRate(10);
-     }
      
-     else  frameRate(60);
-     
-     var a = int(random(1, 10));
+     if(keyIsPressed){
+       fill(0);
+       ellipse(mouseX, mouseY, 60, 60);
+     }
+     
+     else{
+     var a = int(random(1, 7));
     
      if (a == 1){
        fill(0, 255, 187);
@@ -34,10 +36,11 @@ function draw(){
     
      ellipse(mouseX, mouseY, size, size);
      size = size + 0.5;
-    
- 
+     }
+     
   }
   else  size=5;
  
   
 }
+
